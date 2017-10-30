@@ -1,0 +1,15 @@
+body {
+    background-color: rgba(24, 67, 255, 0.44);
+    color: #fefdff;
+
+}
+h1 {
+    color: #002899;
+}
+p {
+    color: #fefdff;
+}
+#myDiv {
+    font-size: 100px;
+}
+
