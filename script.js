@@ -98,6 +98,13 @@ function determineSign(day, month){
 }
 
 function determineHoroscope(sign) {
+    var signList = ['Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius'];
+    var textList = ['Capricorn-text', 'Aquarius-text', 'Pisces-text', 'Aries-text', 'Taurus-text', 'Gemini-text', 'Cancer-text', 'Leo-text', 'Virgo-text', 'Libra-text', 'Scorpio-text', 'Sagittarius-text'];
+    for(var i = 0; i <= 12; i++) {
+        if(sign == signList[i]){
+            return textList[i];
+        }
+    }
 }
 
 function determineImage(sign){
@@ -106,6 +113,6 @@ function determineImage(sign){
 
 function onSubmit() {
     var sign = determineSign(document.getElementById("dayBox").value, document.getElementById("monthBox").value);
-    document.getElementById("output").innerHTML = sign;
     var horoscope = determineHoroscope(sign);
+    document.getElementById("output").innerHTML = sign + ': ' + horoscope;
 }
