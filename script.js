@@ -2,18 +2,18 @@
 // global vaiables
 var signList = ['capricorn', 'aquarius', 'pisces', 'aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius'];
 var textList = [
-    "You are ambitious, practical, responsible and sincere.",
-    "You are a humantarian, inventive, unemotional, friendly, affectionate and sarcastic.",
-    "You are spiritual, selfless, peace-loving, mysterius, kind and elusive.",
-    "You are spntaneous, optimistic, courageous, adventurous, impatient and proud.",
-    "You are stable, practical, artistic, stubborn, materialistic and possesive.",
-    "You are tactful, versatile, witty, social, independent and intelligent.",
-    "You are unpredictable, temperamental, indecisive, loyal, moody and sensitive.",
-    "You are independent, warm, capable, social, and a good leader.",
-    "You are perfectionistic, mannagerial, reliable, inflexible and independent,",
-    "You are balanced, diplomatic, charming, indecisive, trustworthy and detached.",
-    "You are independent, mysterious, loyal, manipulative, observant and passionate.",
-    "You are courageous, frank, generous, tactless, creative, unredictable and likeable"
+    "ambitious, practical, responsible and sincere",
+    "a humantarian, inventive, unemotional, friendly, affectionate and sarcastic",
+    "spiritual, selfless, peace-loving, mysterius, kind and elusive",
+    "spntaneous, optimistic, courageous, adventurous, impatient and proud",
+    "stable, practical, artistic, stubborn, materialistic and possesive",
+    "tactful, versatile, witty, social, independent and intelligent",
+    "unpredictable, temperamental, indecisive, loyal, moody and sensitive",
+    "independent, warm, capable, social, and a good leader",
+    "perfectionistic, mannagerial, reliable, inflexible and independent",
+    "balanced, diplomatic, charming, indecisive, trustworthy and detached",
+    "independent, mysterious, loyal, manipulative, observant and passionate",
+    "courageous, frank, generous, tactless, creative, unpredictable and likeable"
 ];
 
 //function changes the number of days depending on the month selected
@@ -147,12 +147,25 @@ function specialMsg(day, month) {
 }
 
 function onSubmit() {
-    var day = document.getElementById("dayBox").value;
-    console.log(day);
     var month = document.getElementById("monthBox").value;
+    if (month == 0) {
+        return;
+    }
+
+    var day = document.getElementById("dayBox").value;
+    var name = document.getElementById("name").value;
+
     var sign = determineSign(day, month);
     var horoscope = determineHoroscope(sign);
     var msg = specialMsg(day, month);
-    document.getElementById("output").innerHTML = horoscope + '<br />' + msg;
-    document.getElementById("image").innerHTML  = "<img src=" +"'" + determineImage(sign) + "'" + "/>";
+    var text = "";
+
+    if (name != "" && month > 0) {
+        text = "Hello " + name + "! You are " + horoscope + '<br />' + msg;
+    } else {
+        text = "You are " + horoscope + '<br />' + msg;
+    }
+
+    document.getElementById("output").innerHTML = text;
+    document.getElementById("image").innerHTML = "<img src=" + "'" + determineImage(sign) + "'" + "/>";
 }
