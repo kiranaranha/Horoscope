@@ -2,18 +2,31 @@
 // global vaiables
 var signList = ['capricorn', 'aquarius', 'pisces', 'aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius'];
 var textList = [
-    "ambitious, practical, responsible and sincere",
-    "a humantarian, inventive, unemotional, friendly, affectionate and sarcastic",
-    "spiritual, selfless, peace-loving, mysterius, kind and elusive",
-    "spntaneous, optimistic, courageous, adventurous, impatient and proud",
-    "stable, practical, artistic, stubborn, materialistic and possesive",
-    "tactful, versatile, witty, social, independent and intelligent",
-    "unpredictable, temperamental, indecisive, loyal, moody and sensitive",
-    "independent, warm, capable, social, and a good leader",
-    "perfectionistic, mannagerial, reliable, inflexible and independent",
-    "balanced, diplomatic, charming, indecisive, trustworthy and detached",
-    "independent, mysterious, loyal, manipulative, observant and passionate",
-    "courageous, frank, generous, tactless, creative, unpredictable and likeable"
+    "going to experience something very good, that will make you happy. " +
+    "You will achieve something great at your work or school. " +
+    "However you will also have extreme constipation that you may never fully recover from.",
+    "soon going to resolve an intense conflict and bring peace to humanity. " +
+    "But your sarcastic sense of humor will cause troubles for you.",
+    "going to have a spiritual experience from which you will gain a new prospective on life. " +
+    "You will also trip over a rock 3 times in the next month. ",
+    "going to receive an unexpected gift from someone. " +
+    "You also will lose your cell phone.",
+    "going to unintentionally make a famous piece of art. " +
+    "Your enemies will seek revenge by pranking you.",
+    "going to meet a someone who will change your life forever. You will also be attacked by a chinchilla. ",
+    "going to eat the best meal of your life in the next month. " +
+    "Others will envy you for having better food than them. " +
+    "You may have to escape them by moving to another country. ",
+    "going to accidentally cause a social and political revolution which will change the world forever. " +
+    "You will also eat something that will make you gassy for six months. ",
+    "going to develop a extremely useful skill in the next year. " +
+    "A chicken will scratch you soon, causing a mild disease. ",
+    "going to visit a new place, where you will be worshipped by the local people. " +
+    "You will latter sit on a pine cone",
+    "going to win a large prize that will come with food. " +
+    "You will also get pooped on by a bird. ",
+    "going to meet the wolds cutest puppy and win one million dollars. " +
+    "You will also fall in a well and never escape. "
 ];
 
 //function changes the number of days depending on the month selected
@@ -148,21 +161,19 @@ function specialMsg(day, month) {
 
 function onSubmit() {
     var month = document.getElementById("monthBox").value;
-    if (month == 0) {
-        return;
-    }
-
     var day = document.getElementById("dayBox").value;
     var name = document.getElementById("name").value;
-
     var sign = determineSign(day, month);
     var horoscope = determineHoroscope(sign);
     var msg = specialMsg(day, month);
     var text = "";
 
+    if (month == 0) {
+        text = 'Please enter your date of birth!'
+    }
     if (name != "" && month > 0) {
         text = "Hello " + name + "! You are " + horoscope + '<br />' + msg;
-    } else {
+    } else if(month > 0){
         text = "You are " + horoscope + '<br />' + msg;
     }
 

@@ -1,15 +1,31 @@
 body {
     background-color: rgba(24, 67, 255, 0.44);
     color: #fefdff;
+    text-align: center
 
 }
 h1 {
     color: #002899;
+    font-size: 60px;
+    text-align: center
 }
 p {
-    color: #fefdff;
+    color: #29a5ff;
+    text-align: center
 }
-#myDiv {
-    font-size: 100px;
+#”myDiv1” {
+    font-size: 20px;
+    text-align: center
 }
 
+#”myDiv2” {
+    font-size: 20px;
+    text-align: center
+}
+#output{
+    color: #ffeed3;
+    font-size: 45px;
+    text-align: center
+}
+#image{
+    text-align: center
