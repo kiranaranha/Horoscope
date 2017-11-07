@@ -1,3 +1,4 @@
+//Kiran Aranha, Period 3 
 
 // global vaiables
 var signList = ['capricorn', 'aquarius', 'pisces', 'aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius'];
