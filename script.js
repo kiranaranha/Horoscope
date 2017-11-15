@@ -30,7 +30,7 @@ var textList = [
     "You will also fall in a well and never escape. "
 ];
 
-//function changes the number of days depending on the month selected
+// function changes the number of days depending on the month selected
 function monthChange(){
     var month = document.getElementById("monthBox").value;
     var monthDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
